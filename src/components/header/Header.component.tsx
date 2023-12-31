@@ -79,40 +79,30 @@ export const Header = () => {
           >
             <ul className="navbar-nav navbar-nav-scroll ms-auto">
               <li className="nav-item">
-                <a className="nav-link active" href="#">
+                <a className="nav-link active" href="/">
                 <FormattedMessage id="home" />
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/brand">
+                <FormattedMessage id="brand" />
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/category">
                 <FormattedMessage id="category" />
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/products">
+                <FormattedMessage id="product" />
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/billing">
                 <FormattedMessage id="bill" />
                 </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Third Item
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Third Item
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Third Item
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Third Item
-                </a>
-              </li>
+              </li>    
             </ul>
           </div>
         </div>

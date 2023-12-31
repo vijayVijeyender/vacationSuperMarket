@@ -8,7 +8,8 @@ export const defaultLanguage='en';
 export type SupportedLocale='en' |'tn';
 export const locales:{[key in SupportedLocale]: Record<MessageId,string>} ={
     en,
-    tn,
+    tn
+    
 };
 
 export type TranslateMessageTn = <T extends string | ReactNode= string>(

@@ -1,12 +1,13 @@
 import { createStore as createEasyPeasyStore } from "easy-peasy";
-import { HttpService } from "../services/http.service";
+import { HttpService } from "../services/http/http.service";
+import { BrandModel, brandModel } from "./Models/brand";
 
 
 export interface AppStoreModel{
-
+    brandModel:BrandModel;
 }
 export const appStoreModel: AppStoreModel ={
-
+    brandModel:brandModel,
 }
 
 function createStore(defaultValues?: any){
