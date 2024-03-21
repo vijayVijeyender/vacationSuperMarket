@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 interface Model{
     modelTitle:string,
     modelContent:string,
@@ -5,6 +7,7 @@ interface Model{
     resetbrand:Function
 }
 export  function Model(props:Model){
+    const navigate= useNavigate();
 return (
     <div className="modal fade show" id="modal-1" role="dialog" style={{
         "display": "block"
@@ -16,7 +19,7 @@ return (
                 className="btn-close"
                 type="button"
                 onClick={()=>{props.setShowModel('');
-            props.resetbrand();
+            props.resetbrand();navigate("/brand");
             }}
                 aria-label="Close"
                 data-bs-dismiss="modal" />

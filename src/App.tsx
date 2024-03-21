@@ -8,6 +8,9 @@ import Products from "./pages/product/Products.page";
 import CreateBrand from "./pages/brand/CreateBrand.page";
 import CreateProduct from "./pages/product/CreateProduct.page";
 import CreateCategory from "./pages/Category/CreateCategory.page";
+import { Brand } from "./pages/brand/Brand.page";
+import { Home } from "./pages/home/Home.page";
+
 
 
 
@@ -19,12 +22,15 @@ function App():ReactElement {
     <Applayout>
   <Suspense>
   <Routes>
+  <Route path="/" element={<Home/>}/>
     <Route path="/billing" element={<Bill/>}/>
     <Route path="/category" element={<Catetgory />} />
     <Route path="/products" element={<Products />} />
+    <Route path="/Brands" element={<Brand />} />
     <Route path="/createbrand" element={<CreateBrand />} />
     <Route path="/createcategory" element={<CreateCategory />} />
     <Route path="/createproduct" element={<CreateProduct />} />
+   
   </Routes>
   </Suspense>
   </Applayout>

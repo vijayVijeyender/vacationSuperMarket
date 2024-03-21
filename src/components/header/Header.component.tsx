@@ -84,7 +84,7 @@ export const Header = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/brand">
+                <a className="nav-link" href="/brands">
                 <FormattedMessage id="brand" />
                 </a>
               </li>

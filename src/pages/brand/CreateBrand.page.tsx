@@ -15,13 +15,12 @@ export default function CreateBrand() {
   });
   const [showModel, setShowModel] = useState('');
   const intl = useIntl();
-  const {responseStatus,failureReason}= useStoreState(store=> store.brandModel)
+  const {responseStatus,responseDesc}= useStoreState(store=> store.brandModel)
   const { saveBrand } = useStoreActions(
     (actions: Actions<AppStoreModel>) => actions.brandModel
   );
   const handleBrandCreation =  async () => {
-    const res=await saveBrand(brand);
-    console.log(res);
+    await saveBrand(brand);
     if(responseStatus==="success"){
       setShowModel("success");
     }else{
@@ -40,7 +39,7 @@ export default function CreateBrand() {
   }
   return (
   <>
-      <div className="row">
+      <div className="row ">
         <div className="col">
           <h1
             style={{
@@ -52,12 +51,11 @@ export default function CreateBrand() {
         </div>
       </div>
       <div className="row gy-3 text-center d-flex flex-row justify-content-center">
-        <div className="col-auto col-xl-6">
+        <div className="col-auto col-xl-5">
           <label className="float-start" htmlFor="brandname">
             <FormattedMessage id="enterbrandname" />
           </label>
           <input
-           
             type="text"
             className="form-control"
             placeholder={intl.formatMessage({ id: `enterbrandname` })}
@@ -66,7 +64,7 @@ export default function CreateBrand() {
             onChange={(e)=> setBrand(prev =>({...prev, brandName:e.target.value}))}
           />
         </div>
-        <div className="col-auto">
+        <div className="col-auto col-xl-5" >
           <label className=" float-start" htmlFor="brandnametamil">
             <FormattedMessage id="enterbrandnametamil" />
           </label>
@@ -80,13 +78,24 @@ export default function CreateBrand() {
           />
         </div>
         <div className="col-auto col-xl-5">
-          <label className="form-label float-start "><FormattedMessage id="enterbranddesciption" /></label>
-          <input className="form-control" value={brand.brandDescription}
-            onChange={(e)=> setBrand(prev =>({...prev, brandDescription:e.target.value}))} type="text" placeholder={intl.formatMessage({ id: `enterbranddesciption` })} /></div>
+          <label className="form-label float-start " htmlFor="enterbranddesciption"><FormattedMessage id="enterbranddesciption" /></label>
+          <input 
+          id="enterbranddesciption"
+          className="form-control"
+          value={brand.brandDescription}
+          onChange={(e)=> setBrand(prev =>({...prev, brandDescription:e.target.value}))} 
+          type="text" 
+          placeholder={intl.formatMessage({ id: `enterbranddesciption` })} /></div>
     <div className="col-auto col-xl-5">
-      <label className="form-label float-start "><FormattedMessage id="enterbranddesciption" />
-      </label><input className="form-control" value={brand.brandDescriptionTn}
-            onChange={(e)=> setBrand(prev =>({...prev, brandDescriptionTn:e.target.value}))} type="text" placeholder={intl.formatMessage({ id: `enterbranddesciptiontamil` })} /></div>
+      <label className="form-label float-start " htmlFor="enterbranddesciptiontamil"><FormattedMessage id="enterbranddesciptiontamil" />
+      </label>
+      <input 
+      id="enterbranddesciptiontamil"
+      className="form-control"
+       value={brand.brandDescriptionTn}
+       onChange={(e)=> setBrand(prev =>({...prev, brandDescriptionTn:e.target.value}))} 
+       type="text" 
+       placeholder={intl.formatMessage({ id: `enterbranddesciptiontamil` })} /></div>
       </div>
       <div
         className="row d-flex justify-content-center"
@@ -132,9 +141,9 @@ export default function CreateBrand() {
 
       </div>
       { showModel === "success"   &&
-      <Model modelTitle="Brand Creation" modelContent="Brand Creation Success" resetbrand={resetbrand} setShowModel={setShowModel}/>}
+      <Model modelTitle="Brand Creation" modelContent={responseDesc} resetbrand={resetbrand} setShowModel={setShowModel}/>}
       { showModel === "failed"   &&
-      <Model modelTitle="Brand Creation" modelContent={failureReason} resetbrand={resetbrand} setShowModel={setShowModel}/>}
+      <Model modelTitle="Brand Creation" modelContent={responseDesc} resetbrand={resetbrand} setShowModel={setShowModel}/>}
       </>
   );
 }

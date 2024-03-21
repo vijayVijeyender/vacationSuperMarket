@@ -18,10 +18,10 @@ export const Catetgory =()=>{
                             </div>
                         </div>
                     </a></div>
-                <div className="col item"><a href="#">
+                <div className="col item"><a href="/">
                         <div className="card border-0 shadow-none">
-                            <div className="card-body text-center d-flex flex-column align-items-center p-0"><img className="rounded-circle mb-3 fit-cover" width="130" height="130" src="src/assets/img/baby_care.jpeg" />
-                                <h5 className="fw-bold text-primary card-title mb-0">Baby Care</h5>
+                            <div className="card-body text-center d-flex flex-column align-items-center p-0"><img className="rounded-circle mb-3 fit-cover" width="130" height="130" src="src/assets/img/water_can.jpeg" />
+                                <h5 className="fw-bold text-primary card-title mb-0">Water Can</h5>
                             </div>
                         </div>
                     </a></div>
