@@ -1,6 +1,4 @@
-class ObjectKey{
-    [key:string]:any;
-}
+
 
 export interface Brand {
     id?:number;
