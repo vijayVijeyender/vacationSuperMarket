@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Home (){
+    useEffect(()=>{
+     window.localStorage.setItem("lang","fr");   
+    })
     return (
         <div className="container">
     <div className="row">

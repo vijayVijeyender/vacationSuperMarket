@@ -1,11 +1,13 @@
 import { Fragment, PropsWithChildren, useEffect, useState } from "react";
-import { defaultLanguage, locales, SupportedLocale } from "../locales";
 import { IntlProvider as ReactIntlProvider } from "react-intl";
+
+import { defaultLanguage, locales, SupportedLocale } from "../locales";
+
 
 export function IntlProvider({children}: PropsWithChildren){
     const [locale, setLocale]= useState<SupportedLocale>(() => {
         //read language from bus
-        let lang ='tn';
+        let lang = window.localStorage.getItem("lang") === null ? 'fr': 'en';
         if(!lang){
             lang=navigator.language.toLowerCase().split(/[_-]+/)[0];
         }
@@ -16,7 +18,8 @@ export function IntlProvider({children}: PropsWithChildren){
     });
 
     useEffect(()=>{
-        setLocale('tn'.toLowerCase() as SupportedLocale)
+        let lang = window.localStorage.getItem("lang") === null ? 'fr': 'en';
+        setLocale(lang.toLowerCase() as SupportedLocale)
     })
 
         return (

@@ -1,18 +1,18 @@
 import { ReactNode } from 'react';
-import en from './en.json'
-import tn from './tn.json'
+import en from './en.json';
+import fr from './fr.json';
 
-type MessageId= keyof typeof en;
+type MessageId= keyof typeof fr;
 
-export const defaultLanguage='en';
-export type SupportedLocale='en' |'tn';
-export const locales:{[key in SupportedLocale]: Record<MessageId,string>} ={
-    en,
-    tn
-    
+export const defaultLanguage='fr';
+
+export type SupportedLocale=  'fr';
+
+export const locales:{ [key in SupportedLocale]: Record<MessageId,string>} = {
+    fr,
 };
 
-export type TranslateMessageTn = <T extends string | ReactNode= string>(
+export type TranslateMessageFn = <T extends string | ReactNode= string>(
     code:string,
     values?:Record<string,string>,
 )=> T;
