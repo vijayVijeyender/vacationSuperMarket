@@ -60,7 +60,7 @@ export const brandModel: BrandModel ={
     }),
 
 
-    getBrand: thunk(async(actions,payload,{getState})=>{
+    getBrand: thunk(async(actions,{getState})=>{
 
       await axios.get("http://localhost:8080/brand").then(
          res=>{ 

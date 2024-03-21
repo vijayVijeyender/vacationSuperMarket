@@ -1,14 +1,11 @@
-import { Actions } from "easy-peasy";
+
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { AppStoreModel } from "../../store";
-import { useStoreActions } from "../../store/hooks";
 
 export function Brand (){
-    const navigate=useNavigate();
-    const { getBrand } = useStoreActions(
-        (actions: Actions<AppStoreModel>) => actions.brandModel
-      );
+    // const navigate=useNavigate();
+    // const { getBrand } = useStoreActions(
+    //     (actions: Actions<AppStoreModel>) => actions.brandModel
+    //   );
     useEffect(()=>{
         // getBrand();
     })

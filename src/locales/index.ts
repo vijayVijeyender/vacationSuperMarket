@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import en from './en.json';
+
 import fr from './fr.json';
 
 type MessageId= keyof typeof fr;
